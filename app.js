@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 
 app.use('/', router);
+app.use('/Essaouira', router);
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
