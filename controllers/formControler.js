@@ -8,6 +8,7 @@ const showForm = (req, res) => {
 }
 const createContact = async(req, res) => {
     req.body.Date = new Date().toLocaleString("fr-FR");
+    req.body.Contact = 'Non';
 
     // Google sheet API
     const doc = await connectSheetApi();

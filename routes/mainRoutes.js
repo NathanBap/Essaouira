@@ -5,7 +5,7 @@ import * as formController from '../controllers/formControler.js';
 const router = express.Router();
 
 router.route('/')
-    .get((req, res) => { res.sendFile(path.join(process.cwd(), 'views', 'index.html')); });
+    .get((req, res) => { res.sendFile(path.join(process.cwd(), 'views', 'accueil.html')); });
 
 router.route('/contact')
     .get(formController.showForm)
