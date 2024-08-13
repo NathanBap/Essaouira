@@ -1,0 +1,99 @@
+/* Styles globaux pour un thème de plage */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #f0e59f 90%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#formContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Style du formulaire */
+.form {
+    background-color: rgba(255, 255, 255, 0.7); /* Légèrement transparent pour laisser transparaître le dégradé */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+
+.form div {
+    margin-bottom: 15px;
+}
+
+.form label {
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form input:focus, .form textarea:focus {
+    outline: none;
+    border-color: #4682B4;
+}
+
+.form textarea {
+    min-height: 80px;
+    max-height: 40vh;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1E90FF;
+}
+
+/* Ajouter un effet de vague en bas du formulaire */
+.form::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    background: url('https://www.transparenttextures.com/patterns/wavecut.png') repeat-x;
+    background-size: contain;
+    margin-top: 20px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+
+#remerciements {
+    display: flex;
+    flex-direction: column;
+}
+/* Style du lien de retour */
+#remerciements a {
+    text-align: center;
+}

@@ -7,7 +7,7 @@ const router = express.Router();
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // Fenêtre de 15 minutes
-    max: 2, // Limite chaque IP à 2 requêtes POST par fenêtre
+    max: 10, // Limite chaque IP à 2 requêtes POST par fenêtre
     message: "Vous avez soumis le formulaire trop de fois, veuillez réessayer plus tard"
 });
 

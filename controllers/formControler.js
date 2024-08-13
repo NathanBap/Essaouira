@@ -17,7 +17,7 @@ const createContact = async(req, res) => {
     await sheet.addRow(req.body);
 
     // Redirection
-    res.send('Contact created');
+    res.sendFile(path.join(process.cwd(), 'views', 'remerciements.html'));
 }
 const connectSheetApi = async () => {
     dotenv.config();
