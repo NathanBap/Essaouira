@@ -9,7 +9,6 @@ body, html {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
-
 #video-container {
     position: relative;
     display: flex;
@@ -57,3 +56,111 @@ button {
 button:hover {
     background-color: #d43d29;
 }
+
+#grid-container {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    margin: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+#contact-video {
+    background-color: white;
+    width: 100%;
+    height: 50%;
+}
+.title {
+    text-align: center;
+}
+
+#grid-col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contact-form {
+    width: 100%;
+}
+
+/* Style du formulaire */
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "form-left form-right"
+        "button button";
+    column-gap: 15px;
+
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to bottom, #87CEEB, #f0e59f 90%);
+}
+.form-left { grid-area: form-left; }
+.form-right { grid-area: form-right; }
+.form-bottom { 
+    display: flex;
+    justify-content: center;
+    grid-area: button; 
+}
+
+.form div > div { margin-bottom: 15px; }
+
+.form label {
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form input:focus, .form textarea:focus {
+    outline: none;
+    border-color: #4682B4;
+}
+
+.form textarea {
+    min-height: 80px;
+    max-height: 40vh;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 50%;
+}
+
+.submit-btn:hover {
+    background-color: #1E90FF;
+}
+
+#remerciements {
+    display: flex;
+    flex-direction: column;
+}
+/* Style du lien de retour */
+#remerciements a {
+    text-align: center;
+}
+

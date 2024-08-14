@@ -18,21 +18,59 @@
             <button id="play-video">Prendre la mer</button>
             <button id="contact-us">Nous contacter</button>
         </div>
-        <video id="service-video">
+        <video id="service-video" loop>
             <source src="/videos/services.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
         </video>
     </div>
-    <div id"ville">
-        <h2>Essaouira</h2>
-        <p>Essaouira est une ville côtière du Maroc, située sur la côte atlantique. Elle est connue pour ses plages, ses sports nautiques et son architecture coloniale portugaise. La médina est protégée par des remparts du XVIIIe siècle, avec des ruelles étroites et des maisons blanches aux volets bleus. Avec ses souks animés, ses cafés et ses restaurants, la ville est un lieu de vacances populaire pour les Marocains et les étrangers.</p>
-    </div>
-    <div id="information">
-        <div id="contact">
-
+    <div id="grid-container">
+        <div id"grid-col-1">
+            <h2 class="title">Essaouira</h2>
+            <p>Essaouira est une ville côtière du Maroc, située sur la côte atlantique. Elle est connue pour ses plages, ses sports nautiques et son architecture coloniale portugaise. La médina est protégée par des remparts du XVIIIe siècle, avec des ruelles étroites et des maisons blanches aux volets bleus. Avec ses souks animés, ses cafés et ses restaurants, la ville est un lieu de vacances populaire pour les Marocains et les étrangers.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt numquam similique consequatur at cupiditate alias sint quos autem et maxime rem aliquid exercitationem eius impedit iure porro maiores, asperiores molestiae.
+            Minus fuga repellendus quas, doloremque ullam laboriosam atque doloribus amet, iste dolorum necessitatibus accusamus suscipit blanditiis est nihil? Quae id voluptatibus non, nisi illo exercitationem a facere maxime maiores temporibus.
+            Placeat voluptas itaque ullam in, quae omnis, alias, ut natus hic quis repellendus voluptatum repellat ipsa necessitatibus veritatis porro praesentium nisi illo laudantium minus. Voluptas animi placeat blanditiis deserunt dolorem.
+            Unde voluptas quisquam minima, placeat vel assumenda dolorum nesciunt obcaecati laboriosam consectetur odio ipsum suscipit amet deleniti error reprehenderit. Obcaecati voluptatem quae officia amet quis voluptas dolore eius saepe inventore.
+            Ratione quas distinctio impedit nobis voluptatum laborum sint quidem ea ipsum explicabo velit eveniet, cumque nisi minima pariatur commodi reprehenderit porro doloribus repellat ullam tenetur voluptate! Autem, quaerat? Magnam, alias!</p>
         </div>
-        <div id="services">
-
+        <div id="grid-col-2">
+            <!-- <video id="contact-video" loop>
+                <source src="/videos/contact.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video> -->
+            <div id="contact-video">Vidéo</div>
+            <div id="contact-form">
+                <h2 class="title">Contactez-nous !</h2>
+                <form class="form" action="/contact" method="POST">
+                    <div class="form-left">
+                        <div class="form-group">
+                            <label for="lastName">Nom :</label>
+                            <input type="text" id="lastName" name="Nom" required placeholder="Votre nom" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">Prénom :</label>
+                            <input type="text" id="firstName" name="Prenom" required placeholder="Votre prénom" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse Email :</label>
+                            <input type="email" id="email" name="Email" required placeholder="votre.email@exemple.com" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-right">
+                        <div class="form-group">
+                            <label for="phone">Téléphone :</label>
+                            <input type="tel" id="phone" name="Telephone" required placeholder="Votre numéro de téléphone" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Que recherchez-vous :</label>
+                            <textarea id="message" name="Message" required placeholder="Décrivez ce que vous recherchez" aria-required="true"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <button type="submit" class="submit-btn">Envoyer</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body> 
