@@ -30,3 +30,39 @@ document.getElementById('contact-us').addEventListener('click', function() {
 window.addEventListener("load", () => {
     document.body.classList.remove("loading-anim");
 });
+
+let slideIndex = 0;
+showSlides();
+
+// Fonction pour changer de slide avec les flèches
+function changeSlide(n) {
+    slideIndex += n;
+    showSlides();
+}
+
+// Fonction pour afficher les slides
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    let prevButton = document.querySelector('.prev');
+    let nextButton = document.querySelector('.next');
+
+    // Réinitialiser l'index s'il dépasse le nombre de slides
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    // Masquer toutes les slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Afficher la slide actuelle
+    slides[slideIndex].style.display = "block";
+}
+
+// Ajouter les gestionnaires d'événements pour les flèches
+document.querySelector('.prev').addEventListener('click', () => changeSlide(-1));
+document.querySelector('.next').addEventListener('click', () => changeSlide(1));
