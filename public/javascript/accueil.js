@@ -1,24 +1,20 @@
 // Lancement de la vidéo de présentation des services
 document.getElementById('play-video').addEventListener('click', function() {
-    var button = document.getElementById('play-video');
-    var serviceVideo = document.getElementById('service-video');
+    var contactVideo = document.getElementById('contact-video');
     var videoContainer = document.getElementById('video-container');
-    var content = document.getElementById('content');
-    var grid = document.getElementById('grid-container');
     
-    // Forcer le reflow
+    // Afficher ma grille correctement
     videoContainer.style.transform = 'translateX(-50%)';
-    //document.body.style.overflow = 'auto';
+    videoContainer.style.overflow = 'visible';
     
     setTimeout(function() {
-        serviceVideo.play(); // Jouer la vidéo des services
-        content.classList.add('hidden'); // Cacher le contenu
-        button.classList.add('hidden'); // Cacher le bouton
+        contactVideo.play(); // Jouer la vidéo des services
     }, 500); // Correspondre à la durée de la transition
 
-    setTimeout(function() {
-        grid.style.display = 'grid'; // Afficher le grid
-    }, 1000);
+    // Afficher les éléments de ma page
+    // setTimeout(function() {
+    //     grid.style.display = 'grid'; // Afficher le grid
+    // }, 1000);
 });
 
 
@@ -42,9 +38,7 @@ function changeSlide(n) {
 
 // Fonction pour afficher les slides
 function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    let prevButton = document.querySelector('.prev');
-    let nextButton = document.querySelector('.next');
+    let slides = document.getElementsByClassName("diapo-image");
 
     // Réinitialiser l'index s'il dépasse le nombre de slides
     if (slideIndex >= slides.length) {
@@ -66,3 +60,48 @@ function showSlides() {
 // Ajouter les gestionnaires d'événements pour les flèches
 document.querySelector('.prev').addEventListener('click', () => changeSlide(-1));
 document.querySelector('.next').addEventListener('click', () => changeSlide(1));
+
+/* Slide text */
+
+const Textes = [{title: 'Architecture', body:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.' +
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.' +
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.' +
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.'},
+                {title: 'Activités', body:'Activités texte long.'},
+                {title: 'Services', body:'Services texte long.'},
+]
+const slidesTextContainer = document.querySelector('.slides-text-container');
+const textTitle = document.getElementById('slide-text-title');
+const textBody = document.getElementById('slide-text-body');
+const paginationText = document.getElementById('slide-text-pagination');
+
+let slideIndexText = 0;
+initSlidesText();
+showSlidesText(slideIndexText);
+
+function initSlidesText() {
+    // pour chaque texte, on crée un bouton de pagination
+    Textes.forEach((text, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => currentSlideText(index));
+        paginationText.appendChild(dot);
+    });
+}
+
+function currentSlideText(n) {
+    showSlidesText(slideIndexText = n);
+}
+
+function showSlidesText(n) {
+    const dots = document.querySelectorAll(".dot");
+    
+    if (n > Textes.length-1) {slideIndexText = 0}
+    if (n < 0) {slideIndexText = Textes.length}
+    
+    textTitle.textContent = Textes[slideIndexText].title;
+    textBody.textContent = Textes[slideIndexText].body;
+    
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[slideIndexText].classList.add("active");
+}
