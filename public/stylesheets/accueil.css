@@ -1,6 +1,11 @@
 /* loading-anim {
     animation-play-state: paused !important;
 } */
+
+:root {
+    --height-wave: 100px;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -61,38 +66,99 @@ body, html {
 
 /* Second écran */
 
-#main-grid-container {
+.grid-2-col {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 100vh 100vh;;
     column-gap: 5vh;
     padding: 5vh;
-    height: 200vh;
-    background-color: rgb(149, 244, 244);
+    height: 100vh;
 }
 
-#main-grid-container > * {
-    height: 90vh; 
-    margin-bottom: 5vh;
+
+.grid-2-col > :nth-child(even):not(.wave) {
+    padding-right: 5vh; /* Ajouter une marge à droite de la deuxième colonne */
+}
+
+/* Vagues */
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--height-wave);
+    background: url(../images/wave_blue.png);
+    background-size: 1000px 100px;
+}
+
+.wave1 {
+    animation: wave-animation 20s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+.wave2 {
+    animation: wave-animation2 5s linear infinite;
+    z-index: 999;
+    opacity: 0.2;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+.wave3 {
+    animation: wave-animation 10s linear infinite;
+    z-index: 998;
+    opacity: 0.5;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+@keyframes wave-animation {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes wave-animation2 {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+/*Coucher de soleil*/
+#first-grid {
+    background: linear-gradient(to bottom, #ffcc66, #ff9966, #ff6699);
+    padding-bottom: var(--height-wave);
+    grid-template-columns: 25% 75%;
+}
+
+#second-grid {
+    background-color: rgba(0, 119, 190, 1);
+    grid-template-columns: 60% 40%;
 }
 
 #contact-video {
     width: 100%;
     object-fit: cover;
+    margin: auto;
 }
 
 /* Style du texte */
 
 .slides-text-container {
     padding: 20px;
-    background-color: #f2f2f2;
     border-radius: 15px;
-    height: 90vh;
     display: grid;
     align-content: start;
     grid-template-rows: auto 1fr auto;
     row-gap: 15px;
-    background-color: rgba(255,255,255, 0.8)
+    background-color: rgba(255,255,255, 0.75);
+    overflow: scroll;
 }
 
 #slide-text-title{
@@ -209,7 +275,6 @@ body, html {
     position: relative;
     max-width: 725px;  /* Taille maximale du diaporama */
     max-height: 340px;
-    margin: auto;
     overflow: hidden;  /* Cache les parties d'image qui débordent */
 }
 
@@ -239,9 +304,8 @@ body, html {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 35%;
     width: auto;
-    margin-top: -22px;
     padding: 16px;
     color: white;
     font-weight: bold;

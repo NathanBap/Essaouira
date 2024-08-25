@@ -21,68 +21,76 @@
                 <button id="contact-us">Nous contacter</button>
             </div>
         </div>
-        <div id="main-grid-container">
-            <div class="slides-text-container">
-                <h2 id="slide-text-title"></h2>
-                <p id="slide-text-body"></p>
-                <div id="slide-text-pagination">
+        <div>
+            <div class="grid-2-col" id="first-grid">
+                <div class="slides-text-container">
+                    <h2 id="slide-text-title"></h2>
+                    <p id="slide-text-body"></p>
+                    <div id="slide-text-pagination">
+                    </div>
                 </div>
+                <video id="contact-video" controls>
+                    <source src="/videos/services.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+                <!-- Animation vagues -->
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
             </div>
-            <video id="contact-video" controls>
-                <source src="/videos/services.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la vidéo.
-            </video>
-            <div class="slideshow-image-container">
-                <!-- Diapositive 1 -->
-                <div class="diapo-image fade">
-                    <img src="/images/diapo/image1.jpg" class="slide-image">
-                </div>
-            
-                <!-- Diapositive 2 -->
-                <div class="diapo-image fade">
-                    <img src="/images/diapo/image2.jpg" class="slide-image">
-                </div>
-            
-                <!-- Diapositive 3 -->
-                <div class="diapo-image fade">
-                    <img src="/images/diapo/image3.jpg" class="slide-image">
-                </div>
-            
-                <!-- Flèches de navigation -->
-                <a class="prev">&#10094;</a>
-                <a class="next">&#10095;</a>
-            </div>
-            <div id="contact-form">
-                <h2 class="title">Contactez-nous !</h2>
-                <form class="form" action="/contact" method="POST">
-                    <div class="form-left">
-                        <div class="form-group">
-                            <label for="lastName">Nom :</label>
-                            <input type="text" id="lastName" name="Nom" required placeholder="Votre nom" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="firstName">Prénom :</label>
-                            <input type="text" id="firstName" name="Prenom" required placeholder="Votre prénom" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Adresse Email :</label>
-                            <input type="email" id="email" name="Email" required placeholder="votre.email@exemple.com" aria-required="true">
-                        </div>
+            <div class="grid-2-col" id="second-grid">
+                <div class="slideshow-image-container">
+                    <!-- Diapositive 1 -->
+                    <div class="diapo-image fade">
+                        <img src="/images/diapo/image1.jpg" class="slide-image">
                     </div>
-                    <div class="form-right">
-                        <div class="form-group">
-                            <label for="phone">Téléphone :</label>
-                            <input type="tel" id="phone" name="Telephone" required placeholder="Votre numéro de téléphone" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Que recherchez-vous :</label>
-                            <textarea id="message" name="Message" required placeholder="Décrivez ce que vous recherchez" aria-required="true"></textarea>
-                        </div>
+                
+                    <!-- Diapositive 2 -->
+                    <div class="diapo-image fade">
+                        <img src="/images/diapo/image2.jpg" class="slide-image">
                     </div>
-                    <div class="form-bottom">
-                        <button type="submit" class="submit-btn">Envoyer</button>
+                
+                    <!-- Diapositive 3 -->
+                    <div class="diapo-image fade">
+                        <img src="/images/diapo/image3.jpg" class="slide-image">
                     </div>
-                </form>
+                
+                    <!-- Flèches de navigation -->
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                </div>
+                <div id="contact-form">
+                    <h2 class="title">Contactez-nous !</h2>
+                    <form class="form" action="/contact" method="POST">
+                        <div class="form-left">
+                            <div class="form-group">
+                                <label for="lastName">Nom :</label>
+                                <input type="text" id="lastName" name="Nom" required placeholder="Votre nom" aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstName">Prénom :</label>
+                                <input type="text" id="firstName" name="Prenom" required placeholder="Votre prénom" aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse Email :</label>
+                                <input type="email" id="email" name="Email" required placeholder="votre.email@exemple.com" aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-right">
+                            <div class="form-group">
+                                <label for="phone">Téléphone :</label>
+                                <input type="tel" id="phone" name="Telephone" required placeholder="Votre numéro de téléphone" aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Que recherchez-vous :</label>
+                                <textarea id="message" name="Message" required placeholder="Décrivez ce que vous recherchez" aria-required="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <button type="submit" class="submit-btn">Envoyer</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
