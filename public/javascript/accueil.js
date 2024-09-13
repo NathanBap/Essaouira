@@ -62,13 +62,20 @@ document.querySelector('.prev').addEventListener('click', () => changeSlide(-1))
 document.querySelector('.next').addEventListener('click', () => changeSlide(1));
 
 /* Slide text */
-
-const Textes = [{title: 'Architecture', body:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.' +
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.' +
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.' +
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit architecto fugit possimus, et quisquam animi laboriosam officia, voluptate unde soluta iure consequuntur. Tenetur voluptates provident vero. Quisquam soluta laudantium cumque.'},
-                {title: 'Activités', body:'Activités texte long.'},
-                {title: 'Services', body:'Services texte long.'},
+const Textes = [{title: 'Essaouira, une perle au bord de l\'Atlantique', 
+                body:`Nichée sur la côte atlantique marocaine, Essaouira charme par son ambiance authentique et son cadre enchanteur. 
+                      Connue pour sa médina inscrite au patrimoine mondial de l\'UNESCO, ses remparts historiques et son port animé, la ville offre un équilibre parfait entre tradition et modernité. 
+                      <br><br>Avec ses plages vastes et ses paysages à couper le souffle, Essaouira invite à la détente dans un cadre unique.`},
+                {title: 'Un art de vivre entre mer et culture', 
+                body:`À Essaouira, les activités ne manquent pas. Que vous soyez amateur de sports nautiques comme le kitesurf ou la planche à voile, 
+                      ou plutôt attiré par la découverte culturelle, la ville a tout pour plaire. Profitez de balades à cheval ou à dos de chameau le long de la plage, 
+                      explorez les souks d\'artisanat local, ou laissez-vous porter par les rythmes du célèbre festival Gnaoua. 
+                      <br><br>Essaouira est un véritable carrefour entre nature et culture, offrant une expérience riche et variée.`},
+                {title: 'Investir à Essaouira : un choix de charme et de sérénité', 
+                body:`Essaouira représente une opportunité unique pour les investisseurs. Le marché immobilier y est en plein développement, 
+                    tout en restant accessible. Que ce soit pour une résidence secondaire, une maison d’hôtes, ou un projet immobilier à long terme, 
+                    la ville combine charme, tranquillité et potentiel de rentabilité. <br><br>Avec son cadre de vie paisible, son climat doux toute l’année et sa croissance touristique, 
+                    Essaouira est une destination idéale pour un investissement immobilier durable.`},
 ]
 const slidesTextContainer = document.querySelector('.slides-text-container');
 const textTitle = document.getElementById('slide-text-title');
@@ -99,8 +106,8 @@ function showSlidesText(n) {
     if (n > Textes.length-1) {slideIndexText = 0}
     if (n < 0) {slideIndexText = Textes.length}
     
-    textTitle.textContent = Textes[slideIndexText].title;
-    textBody.textContent = Textes[slideIndexText].body;
+    textTitle.innerHTML = Textes[slideIndexText].title;
+    textBody.innerHTML = Textes[slideIndexText].body;
     
     dots.forEach(dot => dot.classList.remove("active"));
     dots[slideIndexText].classList.add("active");
