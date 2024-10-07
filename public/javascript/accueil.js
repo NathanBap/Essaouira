@@ -18,6 +18,8 @@ document.getElementById('play-video').addEventListener('click', function() {
 });
 
 
+
+
 document.getElementById('contact-us').addEventListener('click', function() {
     window.location.href = '/contact';
 });
